@@ -17,7 +17,6 @@ import datetime
 import time
 import json
 import base64
-from country_list import countries_for_language
 
 from data import *
 
