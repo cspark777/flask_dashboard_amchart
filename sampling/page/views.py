@@ -23,8 +23,6 @@ from data import *
 basedir = os.path.abspath(os.path.dirname(__file__))
 page = Blueprint('page', __name__)
 
-countries = dict(countries_for_language('en'))
-
 def log_message(message):
     print(message)
     '''
@@ -38,8 +36,7 @@ day_interval : 90, 180, 360
 table_sort=> 0: all, 1: G10, 2: EM
 '''
 def get_mainpage_data(date_interval, table_sort):
-    global countries
-
+    
     chart_data = {}
     chart_data["world_chart_data"] = get_world_chart_data()
     chart_data["country_data"] = get_main_data_for_allcountry(date_interval)
