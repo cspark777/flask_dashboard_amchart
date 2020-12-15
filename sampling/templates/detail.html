@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% block div %}
+<div class="page-content">
+    <input type="hidden" id="init_chart_data" value="{{ chart_data }}"
+    <!-- /.modal -->
+    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <!-- BEGIN STYLE CUSTOMIZER -->
+    <div class="theme-panel hidden-xs hidden-sm">
+        <div class="toggler">
+        </div>
+        <div class="toggler-close">
+        </div>
+        <div class="theme-options">
+            <div class="theme-option theme-colors clearfix">
+                <span>
+                COLOR </span>
+                <ul>                            
+                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="">
+                    </li>                           
+                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="">
+                    </li>                           
+                </ul>
+            </div>                  
+        </div>
+    </div>
+    <!-- END STYLE CUSTOMIZER -->
+    <!-- BEGIN PAGE HEADER-->
+
+    <!--<h3 class="page-title"> Economic Data Pulse </h3>-->
+    <div class="row top-header">
+        <div class="col-md-6 col-sm-12">
+            <h3 class="page-title">Economic Data Pulse </h3>
+        </div>
+        <div class="col-md-6 col-sm-12 top-button-line">
+            <button class="btn pulse-btn active">Feedback</button>
+            <button class="btn pulse-btn">Blog</button>
+            <button class="btn pulse-btn">Twitter</button>
+        </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    
+    
+    <div class="row summary-div">
+        <div class="col-md-2 col-sm-12 flag-div">
+            <img src="/global/img/flags/us.png" id="country_flag_img">
+        </div>              
+        <div class="col-md-10 col-sm-12">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 country-name" id="country_name">
+                    United State of America
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 country-summary-info">
+                    <table id="country_summary_info_table">
+                        <thead>
+                            <tr>
+                                <th>Survay</th>
+                                <th>Growth</th>
+                                <th>Emplovment</th>
+                                <th>Inflation</th>
+                                <th>Housing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3.2%</td>
+                                <td class="positive">+25.4%</td>
+                                <td>4.3%</td>
+                                <td class="negative">-27.1%</td>
+                                <td>2.3%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="border-btn">
+                                        <p class="positive">+78</p>
+                                        <p>Current Reading</p>
+                                    </div>
+                                </td>
+                                <td colspan="2">
+                                    <div class="border-btn">
+                                        <p class="positive">+55</p>
+                                        <p>Prev Reading</p>
+                                    </div>
+                                </td>
+                                <td><img class="arror-img" src="/global/img/up.png" id="arror_img"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet country-detail-table-portlet">
+                <div class="portlet-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#tab_1_1" data-toggle="tab" aria-expanded="true">
+                            Data Detail </a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_2" data-toggle="tab" aria-expanded="false">
+                            Returns </a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_3" data-toggle="tab" aria-expanded="false">
+                            Fx analysis (Ccy Analysis) </a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_4" data-toggle="tab" aria-expanded="false">
+                            Data Comparison (CB Page) </a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_5" data-toggle="tab" aria-expanded="false">
+                            Data Time series (Country) </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab_1_1">
+                            <table class="table table-hover" id="country_data_detail_table">
+                                <thead>
+                                    <tr>
+                                        <th>Pulse Detail</th>
+                                        <th>Sector</th>
+                                        <th>Current Reading</th>
+                                        <th>Prev Deading</th>                            
+                                        <th>Trend</th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>GDP yoy</td>
+                                            <td>Growth</td>
+                                            <td><div class="positive">1%</div></td>
+                                            <td>0.9%</td>
+                                            <td><div class="value-div positive-background positive">Improving</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Unemployment Rate</td>
+                                            <td>Employment</td>
+                                            <td><div class="positive">5.6%</div></td>
+                                            <td>5.6%</td>
+                                            <td><div class="value-div steady-background">Steady</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Retail Sales</td>
+                                            <td>Growth</td>
+                                            <td><div class="positive">1.6%</div></td>
+                                            <td>1.5%</td>
+                                            <td><div class="value-div positive-background positive">Improving</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>House Price</td>
+                                            <td>Housing</td>
+                                            <td><div class="positive">120</div></td>
+                                            <td>110</td>
+                                            <td><div class="value-div positive-background positive">Improving</div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="tab-pane fade" id="tab_1_2">  
+                            <div class="row chart-header">
+                                <div class="col-md-6 col-sm-12 chart-title">
+                                    Historical Data Pulse
+                                </div>
+                                <div class="col-md-6 col-sm-12 chart-tool">
+                                    <p>period length</p>
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn blue active">
+                                        <input type="radio" class="toggle"> 90D </label>
+                                        <label class="btn blue">
+                                        <input type="radio" class="toggle"> 180D </label>
+                                        <label class="btn blue">
+                                        <input type="radio" class="toggle"> 360D </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-chart" id="country_detail_chart">
+                            </div>                          
+                        </div>
+                        <div class="tab-pane fade" id="tab_1_3">                            
+                        </div>
+                        <div class="tab-pane fade" id="tab_1_4">                            
+                        </div>
+                        <div class="tab-pane fade" id="tab_1_5">                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="portlet-body" id="data_detail_div">                    
+                    
+                    
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>              
+    </div>
+</div>
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="{{url_for('static', filename='global/scripts/metronic.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/pages/scripts/detail.js')}}" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+<script>
+
+jQuery(document).ready(function() {    
+    Metronic.init(); // init metronic core componets
+    Layout.init(); // init layout   
+    Demo.init(); // init demo features
+    Detail.init();       
+});
+</script>
+
+{% endblock %}

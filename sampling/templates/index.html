@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block div %}
+<div class="page-content">
+    <input type="hidden" id="init_chart_data" value="{{ chart_data }}"
+    <!-- /.modal -->
+    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <!-- BEGIN STYLE CUSTOMIZER -->
+    <div class="theme-panel hidden-xs hidden-sm">
+        <div class="toggler">
+        </div>
+        <div class="toggler-close">
+        </div>
+        <div class="theme-options">
+            <div class="theme-option theme-colors clearfix">
+                <span>
+                COLOR </span>
+                <ul>                            
+                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="">
+                    </li>                           
+                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="">
+                    </li>                           
+                </ul>
+            </div>                  
+        </div>
+    </div>
+    <!-- END STYLE CUSTOMIZER -->
+    <!-- BEGIN PAGE HEADER-->
+
+    <!--<h3 class="page-title"> Economic Data Pulse </h3>-->
+    <div class="row top-header">
+        <div class="col-md-6 col-sm-12">
+            <h3 class="page-title">Economic Data Pulse </h3>
+        </div>
+        <div class="col-md-6 col-sm-12 top-button-line">
+            <button class="btn pulse-btn active">Feedback</button>
+            <button class="btn pulse-btn">Blog</button>
+            <button class="btn pulse-btn">Twitter</button>
+        </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    
+    
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <!-- BEGIN REGIONAL STATS PORTLET-->
+            <div class="portlet world-map ">                
+                <div class="portlet-body">                    
+                    <div id="chartdiv_heat" class="" style="height: 500px;">                        
+                    </div>
+                </div>
+            </div>
+            <!-- END REGIONAL STATS PORTLET-->
+        </div>              
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet country-table-portlet">
+                <div class="portlet-title">
+                    <div class="tools">
+                        <div class="md-radio-inline">
+                            <div class="md-radio">
+                                <input type="radio" id="radio6" name="radio2" class="md-radiobtn">
+                                <label for="radio6">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                All </label>
+                            </div>
+                            <div class="md-radio">
+                                <input type="radio" id="radio7" name="radio2" class="md-radiobtn" checked="">
+                                <label for="radio7">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                G10 </label>
+                            </div>
+                            <div class="md-radio">
+                                <input type="radio" id="radio8" name="radio2" class="md-radiobtn">
+                                <label for="radio8">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                EM </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body">                    
+                    <table class="table table-hover" id="country_detail_table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Pulse <br>Score</th>
+                            <th>30 Day <br>Changes</th>
+                            <th>Trend</th>
+                            <th>Tx<br> Price</th>
+                            <th>Daily<br> Change</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>              
+    </div>
+</div>
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="{{url_for('static', filename='global/scripts/metronic.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/pages/scripts/index.js')}}" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+<script>
+
+jQuery(document).ready(function() {    
+    Metronic.init(); // init metronic core componets
+    Layout.init(); // init layout   
+    Demo.init(); // init demo features
+    Index.init();       
+});
+</script>
+
+{% endblock %}

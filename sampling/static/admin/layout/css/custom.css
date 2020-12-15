@@ -1,0 +1,308 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+
+/*
+Change Quick Sidebar Width
+*/
+
+/*
+.page-quick-sidebar-wrapper {
+  right: -370px;
+  width: 370px;
+}
+
+.page-quick-sidebar-open.page-quick-sidebar-push-content .page-sidebar-wrapper {
+  margin-left: -370px;
+}
+
+.page-quick-sidebar-open.page-quick-sidebar-push-content .page-footer {
+  margin-right: 370px;
+  margin-left: -370px;
+}
+
+.page-sidebar-reversed.page-quick-sidebar-open.page-quick-sidebar-push-content .page-sidebar-wrapper {
+  margin-right: 370px;
+}
+
+.page-quick-sidebar-open.page-quick-sidebar-push-content.page-quick-sidebar-full-height .page-header {
+  margin-left: -370px;
+}
+
+.page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-list {
+  width: 370px !important;
+}
+
+.page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-item {
+  width: 370px !important;
+  margin-left: 370px;
+}
+
+.page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-content-item-shown .page-quick-sidebar-list {
+  margin-left: -370px;
+}
+*/
+
+.page-title{
+  margin-left: 50px;
+}
+.sidebar-toggler-wrapper{
+  margin-bottom: 50px !important;
+}
+
+.country-table-portlet .tools{
+  float: left !important;
+}
+
+.country-table-portlet .tools label{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.country-table-portlet .portlet-body{
+  background-color: inherit !important;
+  padding: 20px;
+}
+
+.table-hover>tbody>tr:hover{
+  background-color: inherit !important;
+}
+
+.portlet{
+  padding: 20px 50px !important;
+}
+
+.portlet > .portlet-title{
+  border-bottom: inherit;
+}
+
+.trend-image{
+  width: 70px;
+}
+
+.top-header{
+  margin-bottom: 30px;
+}
+
+.flag-div{
+  padding: 30px 50px;
+}
+
+.flag-div img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px !important;
+}
+
+.border-btn p{
+  margin-bottom: 0px;
+}
+.arror-img{
+  height: 50px;
+}
+
+.summary-div{
+  margin-bottom: 30px;
+}
+
+.m-auto{
+  margin: 0 auto;
+}
+
+.detail-chart{
+  height: 500px;
+}
+
+/*------------------*/
+
+.page-sidebar-menu li a{
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+.page-title{
+  font-weight: bold !important;
+}
+
+.top-button-line{
+  padding-top: 20px !important;
+  text-align: right !important;
+}
+
+.pulse-btn{
+  width: 120px !important;
+  border-radius: 5px !important;
+  margin-left: 10px !important;  
+  font-weight: bold;
+}
+
+.country-flag{
+    font-size: 18px;
+}
+.country-flag img{
+  width: 30px;
+  border-radius: 30px !important;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.country-table-portlet table thead th{
+  font-size: 18px !important;
+  text-align: center;
+  border-bottom: 0px;
+}
+
+.country-table-portlet table tbody td{
+  font-size: 18px !important;  
+  font-weight: bold; 
+  text-align: center;
+  border-top: 0px;  
+}
+
+.country-summary-info table thead th{
+  font-size: 18px !important;  
+}
+
+.country-summary-info table tbody td{
+  font-size: 18px !important;  
+  font-weight: bold; 
+}
+
+.positive-background{
+  border-radius: 40px !important;
+}
+
+.negative-background{
+  border-radius: 40px !important;
+}
+
+.steady-background{
+  border-radius: 40px !important; 
+}
+
+.value-div{            
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 100px;
+    padding: 10px;    
+}
+
+.country-name{
+  font-size: 24px;
+    font-weight: bold;    
+    margin-bottom: 10px;
+}
+
+.country-summary-info{
+      margin-left: -50px;
+}
+
+.country-summary-info table{
+  width: 100%;
+}
+
+.country-summary-info table th{
+  font-weight: 700 !important;  
+  text-align: center;
+  height: 50px;
+}
+
+.country-summary-info table td{
+  font-weight: 400 !important;  
+  text-align: center;
+}
+
+.border-btn{  
+  width: 80%;
+  margin: 15px auto;
+}
+
+.country-detail-table-portlet li a{
+  font-size: 18px;  
+  margin-right: 15px;  
+  border-radius: 10px !important;
+}
+
+.country-detail-table-portlet .nav{
+    margin-bottom: 20px;
+    border-bottom: 0px;
+}
+
+
+.country-detail-table-portlet .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {  
+  border: 0px;
+}
+
+.country-detail-table-portlet .nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;    
+}
+
+.country-detail-table-portlet .nav-tabs>li>a:hover {
+    border: 0px !important;
+}
+
+.country-detail-table-portlet table thead th{
+  border-bottom: 0px;
+  font-size: 18px !important;  
+  font-weight: bold; 
+  padding: 20px 10px;
+}
+
+.country-detail-table-portlet table tbody tr td {
+  font-size: 18px;  
+  font-weight: 400;
+  padding: 20px 10px;
+  border-top: 0px;
+}
+
+.country-detail-table-portlet table tbody tr:first-child td {
+  border-top: 0px;
+}
+
+.chart-title{
+  font-size: 30px;  
+  margin-top: 10px;
+  margin-bottom: 30px
+}
+
+.chart-tool{
+  text-align: right;
+}
+
+.chart-tool p{
+  font-size: 16px;    
+    margin-right: 133px;
+}
+
+
+.blue.btn:active:after, .blue.btn.active:after {
+    content: '';
+    width: calc(100% - 34px);
+    position: absolute;
+    left: 17px;
+    bottom: 0px;
+    border-bottom: 3px solid;
+}
+
+.blue.btn{
+  font-size: 20px;
+  font-weight: bold;
+  padding: 3px 20px;  
+}
