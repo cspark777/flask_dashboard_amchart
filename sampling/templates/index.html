@@ -116,6 +116,7 @@
 <script src="{{url_for('static', filename='global/scripts/metronic.js')}}" type="text/javascript"></script>
 <script src="{{url_for('static', filename='admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
 <script src="{{url_for('static', filename='admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='admin/pages/scripts/custom.js')}}" type="text/javascript"></script>
 <script src="{{url_for('static', filename='admin/pages/scripts/index.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
@@ -125,6 +126,7 @@ jQuery(document).ready(function() {
     Metronic.init(); // init metronic core componets
     Layout.init(); // init layout   
     Demo.init(); // init demo features
+    Custom.init();
     Index.init();  
 });
 </script>

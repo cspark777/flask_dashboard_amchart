@@ -1,9 +1,12 @@
 var Index = function () {
 
-    return {
+    return {        
 
         //main function
         init: function () {
+
+
+
             var polygonSeries = null;
 
             function get_main_page_data(){
@@ -31,7 +34,7 @@ var Index = function () {
                 });
             }
 
-            function create_line_charts(div_id, trend_data){
+            function create_line_charts(div_id, trend_data, is_positive){
                 var len = trend_data["x"].length;
                 var chart_data = []
                 for (var i=0; i<len; i++){
@@ -60,7 +63,11 @@ var Index = function () {
                 var series = chart.series.push(new am4charts.LineSeries());
                 series.dataFields.valueY = "value";
                 series.dataFields.dateX = "date";
-                series.stroke = am4core.color("#01e29a"); 
+                if(is_positive)
+                    series.stroke = am4core.color("#01e29a"); 
+                else
+                    series.stroke = am4core.color("#6a303f"); 
+
                 series.strokeWidth = 5;
                 series.tensionX = 0.77;                        
             }
@@ -112,22 +119,22 @@ var Index = function () {
                 for(var i=0;i<len;i++){
                     var detail = detail_data[i];
                     var div_id =  detail["country"] + "_chart";
-                    create_line_charts(div_id, detail["trend"]);
+                    if(detail["daily_change"]>0)
+                        create_line_charts(div_id, detail["trend"], true);
+                    else
+                        create_line_charts(div_id, detail["trend"], false);
                 }
             }
 
             $('input[name="radio_country_filter"]').on("click", function(e){
                 
                 get_main_page_data();
-            });
+            });            
 
             $(document).on('click', "#country_detail_table tbody tr", function(e){
                 var country = $(e.target.closest("tr")).find(".country-flag").text();
                 window.location.href = "detail/" + country;
             });
-
-
-
 
             var d = new Date();
             var timeoffset = 0; //d.getTimezoneOffset() * 60000;

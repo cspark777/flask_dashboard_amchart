@@ -313,3 +313,7 @@ Change Quick Sidebar Width
   width: 200px;
   margin: 0 auto;
 }
+
+.page-content{
+  margin-right: 235px;
+}
