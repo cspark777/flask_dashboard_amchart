@@ -7,6 +7,9 @@ import base64
 import random
 
 sample_country_list = ['US', 'JP', 'AU', 'CH', 'UK']
+sample_G10_country_list = ['US', 'JP', 'UK']
+sample_EM_country_list = ['AU', 'CH']
+
 
 sample_world_chart_data = [
     {"id":'US', "value": 5.5},
@@ -116,67 +119,14 @@ def get_world_chart_data_list():
 def get_detail_data(country, date_interval):
     return sample_detail_data
 
-#=================  create chart png files by cron job every day =================
-basedir = os.path.abspath(os.path.dirname(__file__))
-chart_images_path = basedir + "/sampling/static/chart_images/"
-
-def make_chart_thumbnail(country, x, y, date_interval, is_positive):
-    today_str = datetime.datetime.today().strftime('%Y-%m-%d')
-    img_file_path_dark = chart_images_path + "/" + country + "_" + today_str + "_" + str(date_interval) + "_dark.png"
-    img_file_path_light = chart_images_path + "/" + country + "_" + today_str + "_" + str(date_interval) + "_light.png"
-
-    x1 = np.array(x)
-    y1 = np.array(y)    
-
-    #define x as 200 equally spaced values between the min and max of original x 
-    xnew = np.linspace(x1.min(), x1.max(), 200) 
-
-    #define spline
-    spl = make_interp_spline(x1, y1, k=3)
-    y_smooth = spl(xnew)
-
-    #create smooth line chart 
-    if is_positive == 1:
-        plt.plot(xnew, y_smooth, linewidth=7.0, color="#01e29a")
-    else:
-        plt.plot(xnew, y_smooth, linewidth=7.0, color="#6a303f")
-
-    plt.axis('off')    
-    
-
-    plt.savefig(img_file_path_dark, facecolor="#1d2132", bbox_inches='tight')
-    plt.savefig(img_file_path_light, facecolor="#ffffff", bbox_inches='tight')
-    
-def make_chart_img_for_all_country(date_interval):
-    today = datetime.datetime.today()
-    data = get_trend_data_list()
-    detail_data = get_main_data_list()
-
-    for dt in detail_data:        
-        x = []
-        y = []
-        for i in range(date_interval):
-            delta = date_interval - i - 1
-            d = today - datetime.timedelta(days=delta)        
-            date_step = int(d.timestamp()) * 1000
-            
-            x.append(date_step)
-            y.append(data[dt["country"]][date_interval - i - 1])
-        
-        if dt["daily_change"] > 0:
-            make_chart_thumbnail(dt["country"], x, y, date_interval, 1)
-        else:
-            make_chart_thumbnail(dt["country"], x, y, date_interval, 0)
-
-def get_chart_img_for_country(country, date_interval, is_dark=1):
-    today_str = datetime.datetime.today().strftime('%Y-%m-%d')
-    if is_dark==1:
-        img_file_path = chart_images_path + country + "_" + today_str + "_" + str(date_interval) + "_dark.png"
-    else:
-        img_file_path = chart_images_path + country + "_" + today_str + "_" + str(date_interval) + "_light.png"
-
-    encoded = base64.b64encode(open(img_file_path, "rb").read())
-    return "data:image/png;base64," + encoded.decode('utf-8')
+def check_country_by_filter(country_name, country_filter):
+    if country_filter == 0 and country_name in sample_country_list:
+        return True
+    if country_filter == 1 and country_name in sample_G10_country_list:
+        return True
+    if country_filter == 2 and country_name in sample_EM_country_list:
+        return True
+    return False
 
 #=================
 
@@ -199,13 +149,15 @@ def get_trend_data_for_country(country, date_interval):
 
     return data
 
-def get_main_data_for_allcountry(date_interval, is_dark=1):
+def get_main_data_for_allcountry(date_interval=90, country_filter=0):
     detail_data_list = get_main_data_list()
     data = []
+    
     for dt in detail_data_list:                
-        dt["trend_figure"] = get_chart_img_for_country(dt["country"], date_interval, is_dark)
-        data.append(dt)
-
+        if check_country_by_filter(dt["country"], country_filter):
+            dt["trend"] = get_trend_data_for_country(dt["country"], date_interval)
+            data.append(dt)
+    
     return data
 
 def get_world_chart_data():

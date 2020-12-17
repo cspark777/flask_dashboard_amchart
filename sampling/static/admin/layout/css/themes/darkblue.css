@@ -1041,3 +1041,7 @@ body {
   background-color: #1d2132;
 }
 
+.table-hover>tbody>tr:hover{
+  background-color: #2f3a69 !important;
+}
+

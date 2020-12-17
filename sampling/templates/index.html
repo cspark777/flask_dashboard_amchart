@@ -29,10 +29,10 @@
     <!--<h3 class="page-title"> Economic Data Pulse </h3>-->
     <div class="row top-header">
         <div class="col-md-6 col-sm-12">
-            <h3 class="page-title">Economic Data Pulse </h3>
+            <a href="/"><h3 class="page-title">Economic Data Pulse </h3></a>
         </div>
         <div class="col-md-6 col-sm-12 top-button-line">
-            <button class="btn pulse-btn active">Feedback</button>
+            <button class="btn pulse-btn">Feedback</button>
             <button class="btn pulse-btn">Blog</button>
             <button class="btn pulse-btn">Twitter</button>
         </div>
@@ -62,24 +62,24 @@
                     <div class="tools">
                         <div class="md-radio-inline">
                             <div class="md-radio">
-                                <input type="radio" id="radio6" name="radio2" class="md-radiobtn">
-                                <label for="radio6">
+                                <input type="radio" id="radio_all" name="radio_country_filter" class="md-radiobtn" checked="" value=0>
+                                <label for="radio_all">
                                 <span class="inc"></span>
                                 <span class="check"></span>
                                 <span class="box"></span>
                                 All </label>
                             </div>
                             <div class="md-radio">
-                                <input type="radio" id="radio7" name="radio2" class="md-radiobtn" checked="">
-                                <label for="radio7">
+                                <input type="radio" id="radio_g10" name="radio_country_filter" class="md-radiobtn" value=1>
+                                <label for="radio_g10">
                                 <span class="inc"></span>
                                 <span class="check"></span>
                                 <span class="box"></span>
                                 G10 </label>
                             </div>
                             <div class="md-radio">
-                                <input type="radio" id="radio8" name="radio2" class="md-radiobtn">
-                                <label for="radio8">
+                                <input type="radio" id="radio_em" name="radio_country_filter" class="md-radiobtn" value=2>
+                                <label for="radio_em">
                                 <span class="inc"></span>
                                 <span class="check"></span>
                                 <span class="box"></span>
@@ -125,7 +125,7 @@ jQuery(document).ready(function() {
     Metronic.init(); // init metronic core componets
     Layout.init(); // init layout   
     Demo.init(); // init demo features
-    Index.init();       
+    Index.init();  
 });
 </script>
 
