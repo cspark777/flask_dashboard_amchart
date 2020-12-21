@@ -1,31 +1,14 @@
 {% extends "base.html" %}
 {% block div %}
 <div class="page-content">
-    <input type="hidden" id="init_chart_data" value="{{ chart_data }}"
-    <!-- /.modal -->
-    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-    <!-- BEGIN STYLE CUSTOMIZER -->
-    <div class="theme-panel hidden-xs hidden-sm">
-        <div class="toggler">
-        </div>
-        <div class="toggler-close">
-        </div>
-        <div class="theme-options">
-            <div class="theme-option theme-colors clearfix">
-                <span>
-                COLOR </span>
-                <ul>                            
-                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="">
-                    </li>                           
-                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="">
-                    </li>                           
-                </ul>
-            </div>                  
-        </div>
+    <div class="theme-panel hidden-xs hidden-sm switch-theme-color-div">
+        <label id="color_switch" class="color-switch">
+            <input type="checkbox" class="toggle" id="slider_theme">
+            <span class="color-slider round"></span>
+        </label>
     </div>
-    <!-- END STYLE CUSTOMIZER -->
-    <!-- BEGIN PAGE HEADER-->
-
+    <input type="hidden" id="init_chart_data" value="{{ chart_data }}">
+    
     <!--<h3 class="page-title"> Economic Data Pulse </h3>-->
     <div class="row top-header">
         <div class="col-md-6 col-sm-12">
@@ -57,7 +40,7 @@
                             <tr>
                                 <th>Survay</th>
                                 <th>Growth</th>
-                                <th>Emplovment</th>
+                                <th>Employment</th>
                                 <th>Inflation</th>
                                 <th>Housing</th>
                             </tr>
@@ -70,6 +53,7 @@
                                 <td class="negative">-27.1%</td>
                                 <td>2.3%</td>
                             </tr>
+                            <!--
                             <tr>
                                 <td colspan="2">
                                     <div class="border-btn">
@@ -85,6 +69,7 @@
                                 </td>
                                 <td><img class="arror-img" src="/global/img/up.png" id="arror_img"></td>
                             </tr>
+                        -->
                         </tbody>
                     </table>
                 </div>
@@ -172,12 +157,15 @@
                                 <div class="col-md-6 col-sm-12 chart-tool">
                                     <p>period length</p>
                                     <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn blue active">
-                                        <input type="radio" class="toggle"> 90D </label>
-                                        <label class="btn blue">
-                                        <input type="radio" class="toggle"> 180D </label>
-                                        <label class="btn blue">
-                                        <input type="radio" class="toggle"> 360D </label>
+                                        <label class="btn blue active radio-date-interval">
+                                            <input type="radio" class="toggle" name="radio_date_interval" id="d_90" value=90> 90D 
+                                        </label>
+                                        <label class="btn blue radio-date-interval">
+                                            <input type="radio" class="toggle" name="radio_date_interval" id="d_180" value=180> 180D 
+                                        </label>
+                                        <label class="btn blue radio-date-interval">
+                                            <input type="radio" class="toggle" name="radio_date_interval" id="d_360" value=360> 360D 
+                                        </label>
                                     </div>
                                 </div>
                             </div>

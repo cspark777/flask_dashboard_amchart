@@ -211,8 +211,10 @@ Change Quick Sidebar Width
     margin-bottom: 10px;
 }
 
-.country-summary-info{
-      margin-left: -50px;
+@media (min-width: 1720px) {
+  .country-summary-info{
+        margin-left: -50px;
+  }
 }
 
 .country-summary-info table{
@@ -316,4 +318,81 @@ Change Quick Sidebar Width
 
 .page-content{
   margin-right: 235px;
+}
+/*----------------------------------*/
+.switch-theme-color-div{
+  width: fit-content !important;
+}
+
+
+/* The switch - the box around the slider */
+.color-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.color-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.color-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.color-slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url('/global/img/night.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .color-slider {
+  background-color: #2196f3;
+}
+
+input:focus + .color-slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .color-slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url('/global/img/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.color-slider.round {
+  border-radius: 34px !important;
+}
+
+.color-slider.round:before {
+  border-radius: 50%;
 }

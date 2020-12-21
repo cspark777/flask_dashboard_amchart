@@ -64,7 +64,7 @@ def get_detail(country):
         return render_template('detail.html', chart_data=chart_data)        
     else:
         date_interval = request.form.get('date_interval')
-        chart_data = get_detail_data_for_country(country, date_interval)
+        chart_data = get_detail_data_for_country(country, int(date_interval))
         chart_data = json.dumps(chart_data) 
         return jsonify(chart_data)
 

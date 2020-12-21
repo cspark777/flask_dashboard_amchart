@@ -58,6 +58,7 @@ var Index = function () {
                 valueAxis.baseValue = 0;                                                
                 valueAxis.renderer.grid.template.disabled = true;
                 valueAxis.renderer.labels.template.disabled = true;
+                valueAxis.renderer.baseGrid.disabled = true;
 
                 // Create series
                 var series = chart.series.push(new am4charts.LineSeries());
@@ -155,7 +156,7 @@ var Index = function () {
                     chart_heat.geodata = am4geodata_worldLow;
                     chart_heat.projection = new am4maps.projections.Miller();
                     var title = chart_heat.chartContainer.createChild(am4core.Label);
-                    title.text = "09/28/2020";
+                    title.text = "";
                     title.fontSize = 20;
                     title.paddingTop = 30;
                     title.align = "center";

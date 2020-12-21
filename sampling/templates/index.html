@@ -1,31 +1,14 @@
 {% extends "base.html" %}
 {% block div %}
 <div class="page-content">
-    <input type="hidden" id="init_chart_data" value="{{ chart_data }}"
-    <!-- /.modal -->
-    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-    <!-- BEGIN STYLE CUSTOMIZER -->
-    <div class="theme-panel hidden-xs hidden-sm">
-        <div class="toggler">
-        </div>
-        <div class="toggler-close">
-        </div>
-        <div class="theme-options">
-            <div class="theme-option theme-colors clearfix">
-                <span>
-                COLOR </span>
-                <ul>                            
-                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="">
-                    </li>                           
-                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="">
-                    </li>                           
-                </ul>
-            </div>                  
-        </div>
+    <div class="theme-panel hidden-xs hidden-sm switch-theme-color-div">
+        <label id="color_switch" class="color-switch">
+            <input type="checkbox" class="toggle" id="slider_theme">
+            <span class="color-slider round"></span>
+        </label>
     </div>
-    <!-- END STYLE CUSTOMIZER -->
-    <!-- BEGIN PAGE HEADER-->
-
+    <input type="hidden" id="init_chart_data" value="{{ chart_data }}">
+    
     <!--<h3 class="page-title"> Economic Data Pulse </h3>-->
     <div class="row top-header">
         <div class="col-md-6 col-sm-12">
