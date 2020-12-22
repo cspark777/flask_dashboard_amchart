@@ -319,7 +319,7 @@ Change Quick Sidebar Width
 .page-content{
   margin-right: 235px;
 }
-/*----------------------------------*/
+/*--------------- switch theme color -------------------*/
 .switch-theme-color-div{
   width: fit-content !important;
 }
@@ -395,4 +395,12 @@ input:checked + .color-slider:before {
 
 .color-slider.round:before {
   border-radius: 50%;
+}
+
+/*-------------------------*/
+@media (min-width: 992px){
+  .page-sidebar-closed .page-content-wrapper .page-content .content-div{
+      width: calc(100% - 190px);
+      margin-left: 190px;
+  }
 }
