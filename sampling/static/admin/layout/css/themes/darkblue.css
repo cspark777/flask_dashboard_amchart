@@ -995,16 +995,17 @@ body {
 
 .country-detail-table-portlet li a{  
   color: white;  
-  background-color: #171a28;   
+  /*background-color: #171a28;   */
+  background: none !important;
 }
 
 .country-detail-table-portlet .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-  background-color: #5c77e1;
+  background: none !important;
   color: white;
 }
 
 .country-detail-table-portlet .nav>li>a:focus, .nav>li>a:hover {    
-    background-color: #5c77e1;
+    /*background-color: #5c77e1;*/
 }
 
 .country-detail-table-portlet table thead th{
@@ -1045,3 +1046,17 @@ body {
   background-color: #2f3a69 !important;
 }
 
+.country-detail-table-portlet > .portlet-body > .nav-tabs > li.active {
+    border-bottom: 4px solid #F3565D;
+    position: relative;
+}
+
+.country-detail-table-portlet > .portlet-body > .nav-tabs > li > a {
+    border: 0;
+    margin-right: 0;
+    color: #737373;
+}
+
+.country-detail-table-portlet > .portlet-body > .nav-tabs > li.active > a{
+    color: white;
+}

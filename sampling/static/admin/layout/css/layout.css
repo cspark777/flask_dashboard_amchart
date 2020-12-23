@@ -2244,7 +2244,7 @@ Page content
     margin-right: 45px !important;
   }
   .page-sidebar-closed .page-content-wrapper .page-content {
-    margin-left: 45px !important;
+    /*margin-left: 45px !important;*/
   }
   .page-sidebar-closed.page-sidebar-hide .page-content-wrapper .page-content {
     margin-left: 0 !important;

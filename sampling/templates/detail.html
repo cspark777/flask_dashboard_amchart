@@ -2,12 +2,7 @@
 {% block div %}
 <div class="page-content">
 <div class="content-div">
-    <div class="theme-panel hidden-xs hidden-sm switch-theme-color-div">
-        <label id="color_switch" class="color-switch">
-            <input type="checkbox" class="toggle" id="slider_theme">
-            <span class="color-slider round"></span>
-        </label>
-    </div>
+    
     <input type="hidden" id="init_chart_data" value="{{ chart_data }}">
     
     <!--<h3 class="page-title"> Economic Data Pulse </h3>-->
@@ -19,6 +14,12 @@
             <button class="btn pulse-btn">Feedback</button>
             <button class="btn pulse-btn">Blog</button>
             <button class="btn pulse-btn">Twitter</button>
+            <div class="theme-panel hidden-xs hidden-sm switch-theme-color-div">
+                <label id="color_switch" class="color-switch">
+                    <input type="checkbox" class="toggle" id="slider_theme">
+                    <span class="color-slider round"></span>
+                </label>
+            </div>
         </div>
     </div>
     <!-- END PAGE HEADER-->

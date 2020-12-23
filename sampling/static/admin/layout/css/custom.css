@@ -142,11 +142,11 @@ Change Quick Sidebar Width
 
 .top-button-line{
   padding-top: 20px !important;
-  text-align: right !important;
+  /*text-align: right !important;*/
 }
 
 .pulse-btn{
-  width: 120px !important;
+  width: 90px !important;
   border-radius: 5px !important;
   margin-left: 10px !important;  
   font-weight: bold;
@@ -329,8 +329,8 @@ Change Quick Sidebar Width
 .color-switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 25px;
 }
 
 /* Hide default HTML checkbox */
@@ -356,8 +356,8 @@ Change Quick Sidebar Width
 .color-slider:before {
   position: absolute;
   content: "";
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   left: 0px;
   bottom: 4px;
   top: 0;
@@ -399,8 +399,16 @@ input:checked + .color-slider:before {
 
 /*-------------------------*/
 @media (min-width: 992px){
+  /*
   .page-sidebar-closed .page-content-wrapper .page-content .content-div{
       width: calc(100% - 190px);
       margin-left: 190px;
   }
+  */
+}
+
+.page-container-bg-solid .theme-panel{
+  margin-top: 3px !important;
+  margin-left: 20px !important;
+  position: relative !important;
 }
